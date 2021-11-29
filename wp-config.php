@@ -22,11 +22,13 @@
 /** The name of the database for WordPress */
 define( 'DB_NAME', 'u1491134_devmw' );
 
+define('FS_METHOD', 'direct');
+
 /** MySQL database username */
-define( 'DB_USER', 'u1491134_devmw' );
+define( 'DB_USER', 'root' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'adminweb2030' );
+define( 'DB_PASSWORD', '' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
@@ -48,14 +50,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         '-ja0H E,. fWhSCf#mk-Me$z[xp&?95.,RhI[k!-7kb/b19a) x=!s`KxoK1Y,{q' );
-define( 'SECURE_AUTH_KEY',  '=Vo[,]Zlho}=84.@D5E91X`pJu!4U?/I@!*1`VXaYU$HQ8sI@<h $|a@0R`;nJQ2' );
-define( 'LOGGED_IN_KEY',    'sN*T~9?ukj2d/$kmSOxBTKIn|]pc$+FSptn%:AGpZUYb8,87B~=fRaTxHJsrhEA8' );
-define( 'NONCE_KEY',        'F?v.t:TLw>`3 #d+]nOA 4|U;zJA!RhvaFcWH{JZ0J+_:h5SwjR/c<RTp4Lf+Uj4' );
-define( 'AUTH_SALT',        'EFw^X?X!F;4zC2dQRum4%xbEf{&1;g&rSyU.1MhK}&L<+lvh12!1;sZ0;6Q`iJ/o' );
-define( 'SECURE_AUTH_SALT', 'yT9Kl4!t;MfJrjA,CV;7V{)i!}pRQTDR5leifvAtex1E^ 5o>!Vw_>B><I<Wgw{_' );
-define( 'LOGGED_IN_SALT',   'WG831BDsC>mrVnWK%`%6~|+7W/Wcq~NT9)CzJ#se0B`l=hO[6lg&h3]oZ>M+c@9n' );
-define( 'NONCE_SALT',       '>Q d$dpU KzfFNaZmfj2jLv/G:7Dk+Q;U)W*:DCxV0<Gjbmbt<u9le:|Co?P4=O]' );
+define( 'AUTH_KEY',         '_t4$r+z5M#L~<U9%97:pAHmoa&S&dV/Afzd~FSWJ[&!)G:z+,NwvEi6mzJ!E)vdq' );
+define( 'SECURE_AUTH_KEY',  'nv[Y-t-W8&q+kt:yIX$3K9 W2W2ici9B72:A!r>I]$yu{:%^@zV3L,]8UPd)Y9Bl' );
+define( 'LOGGED_IN_KEY',    'c/uDzjm !Czm1:ZO]*0Dn7k-J_eU&#XE&MZ*G2,#_qFpYhp;y V+lT`E-c7nv9fg' );
+define( 'NONCE_KEY',        '.lNa$`O+IyOBnVdLyXg@[MY_FQF<o)5.[g(`b!Y]*[v^$:W_ZZEX=$k&38^&>5Gm' );
+define( 'AUTH_SALT',        'iSGu}Y)u+!z;T?eD>s,7ST? A`X9=ET+|]Y*SeG)2o?qhO+QxfOZn9tlQ1=8_&Sw' );
+define( 'SECURE_AUTH_SALT', '~7A&,d|~RZ5A]3vC*aOZh=Pp(u6i@T6&<:$(8d@-BOQTTiT!nlSQb&t)Z2Vy$[*a' );
+define( 'LOGGED_IN_SALT',   '[3A:~&Y;T<uu~Rc!iPAGze=w+jCgHnl))Mn`A@OeN$au&r0I67mw}?!QvOf,s3>Q' );
+define( 'NONCE_SALT',       '#P, u0}o$ctuz{V|V,c;>_zf:A1ocSGSZZf6Fq:z;tqaPOHc?:S=XWS4/`4Hp_kZ' );
 
 /**#@-*/
 
@@ -65,7 +67,7 @@ define( 'NONCE_SALT',       '>Q d$dpU KzfFNaZmfj2jLv/G:7Dk+Q;U)W*:DCxV0<Gjbmbt<u
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix = 'wp_';
+$table_prefix = 'sma_';
 
 /**
  * For developers: WordPress debugging mode.
@@ -94,3 +96,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+
+@ini_set( 'upload_max_filesize' , '400M' );
+@ini_set( 'post_max_size', '400M');
+@ini_set( 'memory_limit', '800M' );
+@ini_set( 'max_execution_time', '300' );
+@ini_set( 'max_input_time', '300' );
